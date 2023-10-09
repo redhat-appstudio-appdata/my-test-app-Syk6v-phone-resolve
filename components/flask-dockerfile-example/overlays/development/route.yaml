@@ -1,0 +1,22 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: flask-dockerfile-example
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: flask-dockerfile-example
+    app.kubernetes.io/part-of: my-test-app
+  name: flask-dockerfile-exampleaupe
+spec:
+  port:
+    targetPort: 5000
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: flask-dockerfile-example
+    weight: 100
+status: {}
