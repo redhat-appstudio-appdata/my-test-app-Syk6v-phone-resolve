@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: flask-dockerfile-example
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: flask-dockerfile-example
+    app.kubernetes.io/part-of: my-test-app
+  name: flask-dockerfile-example
+spec:
+  ports:
+  - port: 5000
+    targetPort: 5000
+  selector:
+    app.kubernetes.io/instance: flask-dockerfile-example
+status:
+  loadBalancer: {}
